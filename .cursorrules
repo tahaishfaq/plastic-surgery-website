@@ -1,0 +1,52 @@
+# Rahman Plastic Surgery - Design and implementation rules
+
+## Design read
+
+This is a trust-first, premium medical tourism website for patients in Pakistan and abroad. Use a calm, editorial clinic language based on the approved references: warm white surfaces, a single muted taupe accent, dark cocoa sections, confident sans-serif typography, real clinical imagery, and generous negative space.
+
+Design dials: variance 4, motion 2, density 4. The result should feel composed and human-made, never like an AI landing-page template.
+
+## Visual system
+
+- Use the tokens in `src/app/globals.css`. The locked palette is paper `#F8F2EB`, white `#FFFDFB`, ink `#2B231E`, body `#665D57`, taupe accent `#A88D70`, darker taupe `#90755A`, and line `#E5DCD2`.
+- Taupe is the only accent. Do not introduce royal blue, purple, neon, multicolor gradients, or unrelated status colors.
+- Use DM Sans for interface text and Instrument Sans for display headings. Do not add Inter, a random serif, or a third type family.
+- Buttons are compact rectangular controls with a 2px radius, uppercase labels, and generous letter spacing. Reserve rounded-full shapes for small icon controls only.
+- Use white and paper sections with occasional deep cocoa sections. Dark sections are part of the editorial rhythm, not a generic dark-mode theme.
+- Prefer editorial split layouts, image-led sections, asymmetric media framing, slim tabs, and quiet rules. Avoid default three-card feature grids, bento dashboards, glassmorphism, and large decorative gradients.
+- Use real approved clinic, team, travel, and consented patient assets. Until then, use clearly documented placeholder slots. Never generate or present AI faces as patient outcomes.
+
+## Anti-generic guardrails
+
+- Do not use em dashes in visible website copy. Rewrite with a period, comma, colon, or regular hyphen.
+- Do not add version labels, numbered eyebrows, scroll cues, decorative dots, weather strips, faux testimonials, fabricated statistics, or vague “next-gen/elevate/seamless” copy.
+- Do not place labels or pills over photographs. Use captions below media only when they convey real information.
+- Do not use generic card walls. Cards only exist when a real content boundary is needed; otherwise use spacing, typography, and a single quiet rule.
+- Keep all medical claims, credentials, outcomes, costs, reviews, and statistics data-driven and unverified by default. Never turn temporary content into evidence.
+- Keep hero copy to a concise eyebrow, a two-line maximum headline, a short supporting sentence, and at most two CTA intents.
+
+## Interaction and accessibility
+
+- Use native CSS transitions for hover and focus. Animate only opacity and transform. Respect `prefers-reduced-motion`.
+- Do not add autoplay video, parallax, scroll hijacking, mouse cursors, or motion for decoration.
+- Every interactive target must have a visible focus state, 44px touch target, and accessible name where necessary.
+- Use `next/image` for project imagery, reserve space to avoid layout shift, and priority-load only the hero image.
+- Keep App Router pages server-rendered by default. Isolate interactivity in small client components.
+
+## Engineering rules
+
+- Keep all editable business data in `src/data`. Route phone, email, and WhatsApp CTAs through the shared helpers in `src/data/site.js`.
+- Keep semantic landmarks, one H1, logical heading order, and stable section IDs.
+- Do not rename form fields, primary nav labels, routes, or section IDs without an explicit request.
+- Before handoff run `npm run lint` and `npm run build`, then check desktop and mobile layouts for overflow, contrast, keyboard paths, and image warnings.
+
+## Content finalization
+
+When a section's copy, images, stats, testimonials, or map data are approved by the client, treat that section as finalized and remove all development placeholder treatment for it.
+
+- In `src/data/<section>.js`, set `isFinalized: true` on the section export, or remove `placeholderNote`, `provisional`, `isPlaceholder`, and demo-only fields once real content is in place.
+- In the matching `src/components/sections/*Section.jsx`, stop rendering footer disclaimer lines, "To be confirmed" labels, "Demo" badges, and "Replace before launch" captions for finalized sections.
+- Replace placeholder image paths and alt text with approved assets and accurate descriptions. Do not leave SVG placeholders or Unsplash stand-ins after the real asset is supplied.
+- Remove instructional copy that only exists for placeholders, such as "Approved imagery will replace these assets" or "Drag the slider to compare placeholder frames."
+- Keep placeholder treatment on sections that are still awaiting client approval. Finalize section by section, not site-wide, unless the whole page is approved.
+- After finalizing, run `npm run lint` and `npm run build`, then recheck the section on mobile and desktop.

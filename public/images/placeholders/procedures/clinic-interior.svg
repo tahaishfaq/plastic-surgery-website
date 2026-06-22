@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="700" viewBox="0 0 900 700" role="img" aria-label="Clinic interior placeholder">
+  <rect width="100%" height="100%" fill="#F8F2EB"/>
+  <rect x="48" y="48" width="804" height="540" fill="none" stroke="#E5DCD2" stroke-width="2"/>
+  <circle cx="315" cy="294" r="84" fill="#A88D70" opacity="0.35"/>
+  <rect x="495.00000000000006" y="210" width="225" height="56" rx="4" fill="#E5DCD2"/>
+  <rect x="495.00000000000006" y="294" width="270" height="35" rx="4" fill="#E5DCD2"/>
+  <rect x="495.00000000000006" y="364" width="198" height="35" rx="4" fill="#E5DCD2"/>
+  <text x="50%" y="644" text-anchor="middle" fill="#665D57" font-family="Arial, sans-serif" font-size="18" letter-spacing="0.08em">Clinic interior placeholder</text>
+  <text x="50%" y="672" text-anchor="middle" fill="#A88D70" font-family="Arial, sans-serif" font-size="13">Replace before launch</text>
+</svg>

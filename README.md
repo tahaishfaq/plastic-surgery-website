@@ -1,5 +1,19 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Project content notes
+
+Homepage sections are composed in `src/app/page.js` from `src/components/sections/` with editable copy in `src/data/`.
+
+Placeholder imagery lives under `public/images/placeholders/` and is labeled in the UI until the client supplies approved clinic, team, patient journey, and before/after assets.
+
+Before launch, confirm in `src/data/site.js`:
+
+- Phone, WhatsApp, email, and clinic address
+- `googleMapsEmbedUrl` for the live map embed
+- Statistics, testimonials, and gallery entries in the relevant `src/data/` files
+
+Consultation requests POST to `/api/consultation`. Email delivery via Resend can be added when credentials are available.
+
 ## Getting Started
 
 First, run the development server:

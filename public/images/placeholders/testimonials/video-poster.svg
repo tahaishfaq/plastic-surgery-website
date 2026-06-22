@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="Video testimonial placeholder">
+  <rect width="100%" height="100%" fill="#F8F2EB"/>
+  <rect x="48" y="48" width="1104" height="515" fill="none" stroke="#E5DCD2" stroke-width="2"/>
+  <circle cx="420" cy="283.5" r="81" fill="#A88D70" opacity="0.35"/>
+  <rect x="660" y="202.5" width="300" height="54" rx="4" fill="#E5DCD2"/>
+  <rect x="660" y="283.5" width="360" height="33.75" rx="4" fill="#E5DCD2"/>
+  <rect x="660" y="351" width="264" height="33.75" rx="4" fill="#E5DCD2"/>
+  <text x="50%" y="619" text-anchor="middle" fill="#665D57" font-family="Arial, sans-serif" font-size="18" letter-spacing="0.08em">Video testimonial placeholder</text>
+  <text x="50%" y="647" text-anchor="middle" fill="#A88D70" font-family="Arial, sans-serif" font-size="13">Replace before launch</text>
+</svg>

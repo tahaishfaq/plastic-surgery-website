@@ -1,0 +1,51 @@
+---
+description: Remove placeholder UI and data when a section is client-approved
+alwaysApply: true
+---
+
+# Content finalization
+
+When copy, images, stats, reviews, map embeds, or gallery assets for a homepage section are approved, finalize that section and remove development placeholder treatment.
+
+## Data (`src/data/`)
+
+- Set `isFinalized: true` on the section export, or delete `placeholderNote` once no longer needed.
+- Remove `provisional: true`, `isPlaceholder: true`, demo author names, and placeholder image paths.
+- Use real alt text, captions, URLs, and verified figures only.
+
+## Components (`src/components/sections/`)
+
+Remove for finalized sections only:
+
+- Footer disclaimer paragraphs sourced from `placeholderNote`
+- Visible labels such as "To be confirmed", "Demo testimonial", "Placeholder image. Replace before launch"
+- Overlay badges like "Demo video placeholder" or "Address to be confirmed" when real data exists
+- Helper copy written only for unfinished assets
+
+## Do not remove
+
+- Form field `placeholder` attributes (input hints)
+- Placeholder treatment on sections still awaiting approval
+- Medical disclaimer in footer or other permanent legal copy
+
+## Example
+
+```js
+// src/data/whyChoose.js — finalized
+export const whyChooseContent = {
+  isFinalized: true,
+  eyebrow: "Qualified Experts",
+  title: "Why Choose Rahman Plastic Surgery",
+  image: { src: "/assets/why-choose.jpg", alt: "Confident patients at Rahman Plastic Surgery." },
+  reasons: ["Board Certified Plastic Surgeon", "..."],
+};
+```
+
+```jsx
+// WhyChooseSection.jsx — no placeholderNote footer when finalized
+{!whyChooseContent.isFinalized ? (
+  <p className="mt-8 text-xs text-white/45">{whyChooseContent.placeholderNote}</p>
+) : null}
+```
+
+Prefer deleting dead placeholder code entirely instead of leaving it commented out.
