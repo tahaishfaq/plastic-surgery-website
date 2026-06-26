@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { footerContent } from "@/data/footer";
 import { navigationItems } from "@/data/navigation";
-import { getMailtoUrl, getTelUrl, getWhatsAppUrl, siteConfig } from "@/data/site";
+import { ContactPhoneList } from "@/components/ui/ContactPhoneList";
+import { getGoogleMapsUrl, getMailtoUrl, siteConfig } from "@/data/site";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -47,26 +48,22 @@ export default function Footer() {
 
             <div>
               <p className="text-sm font-semibold text-white">Contact</p>
-              <ul className="mt-5 space-y-4 text-sm text-white/70">
-                <li>
-                  <a className="transition-colors duration-200 hover:text-white" href={getTelUrl()}>
-                    {siteConfig.phone}
-                  </a>
-                </li>
+              <ContactPhoneList
+                className="mt-5 space-y-3 text-sm text-white/70"
+                linkClassName="transition-colors duration-200 hover:text-white"
+              />
+              <ul className="mt-4 space-y-4 text-sm text-white/70">
                 <li>
                   <a className="transition-colors duration-200 hover:text-white" href={getMailtoUrl()}>
                     {siteConfig.email}
                   </a>
                 </li>
-                <li>
-                  <a className="transition-colors duration-200 hover:text-white" href={getWhatsAppUrl()}>
-                    WhatsApp
-                  </a>
-                </li>
                 <li className="leading-6">
-                  {siteConfig.address}
-                  <br />
-                  {siteConfig.city}
+                  <a className="transition-colors duration-200 hover:text-white" href={getGoogleMapsUrl()} target="_blank" rel="noopener noreferrer">
+                    {siteConfig.address}
+                    <br />
+                    {siteConfig.city}
+                  </a>
                   <br />
                   {siteConfig.workingHours}
                 </li>

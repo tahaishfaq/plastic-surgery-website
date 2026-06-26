@@ -17,7 +17,7 @@ export default function AnnouncementBar() {
             <MessageCircle aria-hidden="true" size={14} />
             WhatsApp
           </a>
-          <span className="text-[#9F8F80]">{siteConfig.city}</span>
+          <span className="text-[#9F8F80]">{siteConfig.address}, {siteConfig.city}</span>
         </div>
       </div>
     </aside>

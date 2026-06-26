@@ -55,7 +55,7 @@ export default function MobileMenu({ isOpen, onClose }) {
           <Button href={getWhatsAppUrl()} variant="light" onClick={onClose}>
             WhatsApp Us
           </Button>
-          <Button href="#consultation" variant="secondary" onClick={onClose}>
+          <Button href="/contact#consultation" variant="secondary" onClick={onClose}>
             Book Consultation
           </Button>
         </div>

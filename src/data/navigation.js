@@ -3,5 +3,5 @@ export const navigationItems = [
   { label: "Doctors", href: "#doctors" },
   { label: "Services", href: "#procedures", hasSubmenu: true },
   { label: "News", href: "#news" },
-  { label: "Contact", href: "#consultation" },
+  { label: "Contact", href: "/contact" },
 ];

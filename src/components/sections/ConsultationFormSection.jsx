@@ -114,7 +114,7 @@ export default function ConsultationFormSection() {
 
             <div className="mt-10 space-y-4 border-t border-brand-line pt-10">
               {consultationContent.contactPaths.map((path) => {
-                const Icon = path.id === "phone" ? Phone : MessageCircle;
+                const Icon = path.kind === "whatsapp" ? MessageCircle : Phone;
 
                 return (
                   <a

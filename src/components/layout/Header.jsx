@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ChevronDown, Clock3, MapPin, Menu, MessageCircle, Phone } from "lucide-react";
 import Image from "next/image";
 import { navigationItems } from "@/data/navigation";
-import { getTelUrl, getWhatsAppUrl, siteConfig } from "@/data/site";
+import { contactPhones, getGoogleMapsUrl, getTelUrl, getWhatsAppUrl, siteConfig } from "@/data/site";
 import Button from "@/components/ui/Button";
 import MobileMenu from "./MobileMenu";
 
@@ -31,7 +31,7 @@ export default function Header() {
             </a>
 
             <div className="hidden items-center xl:flex">
-              <a className="group flex items-center gap-3 whitespace-nowrap" href={getTelUrl()}>
+              <a className="group flex items-center gap-3 whitespace-nowrap" href={getTelUrl(contactPhones[1])}>
                 <Phone
                   aria-hidden="true"
                   className="shrink-0 text-[#A88D70]"
@@ -39,11 +39,16 @@ export default function Header() {
                   strokeWidth={CONTACT_ICON_STROKE}
                 />
                 <span className="grid gap-0.5 text-sm leading-5">
-                  <strong className="font-bold text-[#2B231E] group-hover:text-[#90755A]">{siteConfig.phone}</strong>
+                  <strong className="font-bold text-[#2B231E] group-hover:text-[#90755A]">{contactPhones[1].display}</strong>
                   <span className="text-[#665D57]">Call us today</span>
                 </span>
               </a>
-              <div className="ml-8 flex items-center gap-3 border-l border-[#E5DCD2] pl-8 whitespace-nowrap">
+              <a
+                className="group ml-8 flex items-center gap-3 border-l border-[#E5DCD2] pl-8 whitespace-nowrap"
+                href={getGoogleMapsUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <MapPin
                   aria-hidden="true"
                   className="shrink-0 text-[#A88D70]"
@@ -51,10 +56,10 @@ export default function Header() {
                   strokeWidth={CONTACT_ICON_STROKE}
                 />
                 <span className="grid gap-0.5 text-sm leading-5">
-                  <strong className="font-bold text-[#2B231E]">{siteConfig.address}</strong>
+                  <strong className="font-bold text-[#2B231E] group-hover:text-[#90755A]">{siteConfig.address}</strong>
                   <span className="text-[#665D57]">{siteConfig.city}</span>
                 </span>
-              </div>
+              </a>
               <div className="ml-8 flex items-center gap-3 border-l border-[#E5DCD2] pl-8 whitespace-nowrap">
                 <Clock3
                   aria-hidden="true"
@@ -100,7 +105,7 @@ export default function Header() {
                 Quick Contact
               </Button>
               <Button
-                href="#consultation"
+                href="/contact#consultation"
                 variant="primary"
                 className="min-h-0 rounded-none px-4 py-2 text-[13px] tracking-[0.14em] active:translate-y-0"
               >

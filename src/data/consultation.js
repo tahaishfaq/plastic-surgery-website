@@ -1,4 +1,4 @@
-import { getTelUrl, getWhatsAppUrl, siteConfig } from "@/data/site";
+import { contactPhones, getTelUrl, getWhatsAppPhone, getWhatsAppUrl } from "@/data/site";
 
 export const consultationContent = {
   title: "Request a Consultation",
@@ -10,17 +10,21 @@ export const consultationContent = {
     "Your consultation request has been received. Our team will contact you shortly.",
   errorMessage: "We could not send your request. Please try again or contact us directly.",
   contactPaths: [
-    {
-      id: "phone",
-      label: "Call the clinic",
-      value: siteConfig.phone,
-      href: getTelUrl(),
-    },
+    ...contactPhones
+      .filter((phone) => !phone.isWhatsApp)
+      .map((phone) => ({
+        id: phone.id,
+        label: "Call the clinic",
+        value: phone.display,
+        href: getTelUrl(phone),
+        kind: "phone",
+      })),
     {
       id: "whatsapp",
       label: "Message on WhatsApp",
-      value: "Fast response for international patients",
+      value: getWhatsAppPhone().display,
       href: getWhatsAppUrl(),
+      kind: "whatsapp",
     },
   ],
 };

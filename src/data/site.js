@@ -1,44 +1,107 @@
 export const DEFAULT_WHATSAPP_MESSAGE =
   "Hello Rahman Plastic Surgery, I would like to book a consultation and learn more about your procedures.";
 
+export const contactPhones = [
+  {
+    id: "whatsapp",
+    display: "0312 411 6784",
+    e164: "923124116784",
+    isWhatsApp: true,
+  },
+  {
+    id: "phone-2",
+    display: "0308 832 7000",
+    e164: "923088327000",
+  },
+  {
+    id: "phone-3",
+    display: "0311 772 3331",
+    e164: "923117723331",
+  },
+];
+
+export const clinicCoordinates = {
+  lat: 33.697471618652344,
+  lng: 73.04971313476562,
+  zoom: 17,
+};
+
+export const clinicBranches = [
+  {
+    id: "islamabad",
+    city: "Islamabad",
+    label: "Main Branch",
+    status: "open",
+    address: "G-8 Markaz",
+    region: "Islamabad, Pakistan",
+  },
+  {
+    id: "lahore",
+    city: "Lahore",
+    status: "coming-soon",
+  },
+  {
+    id: "multan",
+    city: "Multan",
+    status: "coming-soon",
+  },
+  {
+    id: "karachi",
+    city: "Karachi",
+    status: "coming-soon",
+  },
+];
+
 export const siteConfig = {
   name: "Rahman Plastic Surgery",
   tagline: "Precision care. Natural-looking confidence.",
-  phone: "+92 3XX XXX XXXX",
-  whatsappNumber: "923XXXXXXXXX",
+  phone: contactPhones[0].display,
+  phones: contactPhones,
+  whatsappNumber: contactPhones[0].e164,
   email: "info@rahmanplasticsurgery.com",
-  address: "Clinic address to be confirmed",
-  city: "Lahore, Pakistan",
+  address: "G-8 Markaz",
+  city: "Islamabad, Pakistan",
   workingHours: "Mon-Sat, 10:00 AM-7:00 PM",
   hoursNote: "Consultations by appointment",
   mapOverlay: {
-    address: "476 5th Avenue",
-    city: "New York, NY 10018",
+    label: "Main Branch",
+    address: "G-8 Markaz",
+    city: "Islamabad, Pakistan",
   },
-  googleMapsEmbedUrl:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.965196874!2d-73.984083684775!3d40.753182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a496344371%3A0xbe8d60ea520bc6!2sNew%20York%20Public%20Library!5e0!3m2!1sen!2sus!4v1730000000000!5m2!1sen!2sus",
+  googleMapsUrl: `https://www.google.com/maps?q=${clinicCoordinates.lat},${clinicCoordinates.lng}&z=${clinicCoordinates.zoom}&hl=en`,
+  googleMapsEmbedUrl: `https://maps.google.com/maps?q=${clinicCoordinates.lat},${clinicCoordinates.lng}&z=${clinicCoordinates.zoom}&hl=en&output=embed`,
   googleReviewUrl: "",
   instagramUrl: "",
   facebookUrl: "",
 };
 
-export function getWhatsAppUrl(message = DEFAULT_WHATSAPP_MESSAGE) {
-  if (/x/i.test(siteConfig.whatsappNumber)) {
-    return "#consultation";
-  }
+export function getGoogleMapsUrl() {
+  return siteConfig.googleMapsUrl;
+}
 
+export function getWhatsAppPhone() {
+  return contactPhones.find((phone) => phone.isWhatsApp) ?? contactPhones[0];
+}
+
+export function getWhatsAppUrl(message = DEFAULT_WHATSAPP_MESSAGE) {
   const phoneNumber = siteConfig.whatsappNumber.replace(/\D/g, "");
   return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 }
 
 export function getTelUrl(phone = siteConfig.phone) {
-  if (/x/i.test(phone)) {
-    return "#consultation";
-  }
+  const entry =
+    typeof phone === "object"
+      ? phone
+      : contactPhones.find((item) => item.display === phone || item.e164 === phone || item.id === phone) ??
+        contactPhones[0];
 
-  return `tel:${phone.replace(/[^\d+]/g, "")}`;
+  return `tel:+${entry.e164}`;
 }
 
 export function getMailtoUrl(email = siteConfig.email) {
   return `mailto:${email}`;
+}
+
+export function getMainBranch() {
+  return clinicBranches.find((branch) => branch.status === "open") ?? clinicBranches[0];
 }

@@ -4,7 +4,7 @@ import { getTelUrl, getWhatsAppUrl } from "@/data/site";
 const actions = [
   { label: "Call", href: getTelUrl(), icon: Phone },
   { label: "WhatsApp", href: getWhatsAppUrl(), icon: MessageCircle },
-  { label: "Book", href: "#consultation", icon: CalendarDays },
+  { label: "Book", href: "/contact#consultation", icon: CalendarDays },
 ];
 
 export default function MobileConversionBar() {
