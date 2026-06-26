@@ -1,50 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Rahman Plastic Surgery Website
 
-## Project content notes
+Next.js App Router site for Rahman Plastic Surgery, a trust-first medical tourism clinic website for patients in Pakistan and abroad.
 
-Homepage sections are composed in `src/app/page.js` from `src/components/sections/` with editable copy in `src/data/`.
+## Route map
 
-Placeholder imagery lives under `public/images/placeholders/` and is labeled in the UI until the client supplies approved clinic, team, patient journey, and before/after assets.
+| Route | Purpose |
+|-------|---------|
+| `/` | Homepage |
+| `/about` | Clinic story and values |
+| `/doctors` | Surgeon profiles (provisional) |
+| `/featured-procedures` | Procedure detail guides |
+| `/case-studies` | Before and after gallery |
+| `/news` | News listing |
+| `/news/[slug]` | Individual articles |
+| `/contact` | Contact and consultation form |
+| `/international-patients` | International patient services |
+| `/privacy-policy` | Privacy policy |
+| `/medical-disclaimer` | Medical disclaimer |
+| `/terms-and-conditions` | Terms and conditions |
+| `/api/consultation` | Consultation form API |
 
-Before launch, confirm in `src/data/site.js`:
+## Content locations
 
-- Phone, WhatsApp, email, and clinic address
-- `googleMapsEmbedUrl` for the live map embed
-- Statistics, testimonials, and gallery entries in the relevant `src/data/` files
+- **Site config and CTAs:** `src/data/site.js`
+- **Navigation:** `src/data/navigation.js`
+- **Page copy:** `src/data/` (about, doctors, legal, procedures, etc.)
+- **News articles:** `src/content/news/*.mdx` loaded via `src/lib/content/news.js`
+- **Placeholder imagery:** `public/images/placeholders/`
+
+## News architecture
+
+Articles live as MDX files with frontmatter. `getAllPosts()` and `getPostBySlug()` in `src/lib/content/news.js` expose a narrow interface so a future CMS adapter can implement the same functions without page changes.
+
+## Environment
+
+Set `NEXT_PUBLIC_SITE_URL` for metadata base URL, sitemap, robots, and JSON-LD.
 
 Consultation requests POST to `/api/consultation`. Email delivery via Resend can be added when credentials are available.
 
-## Getting Started
-
-First, run the development server:
+## Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Before handoff:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+npm run lint
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Check desktop and mobile layouts for overflow, contrast, keyboard paths, and image warnings.
 
-## Learn More
+## Client inputs before final launch
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Approved surgeon bios and photos
+- Consented before/after photography
+- Final news articles and legal text review
+- Live map embed URL and production contact details

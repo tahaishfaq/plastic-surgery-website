@@ -1,14 +1,17 @@
-import BackToTop from "@/components/layout/BackToTop";
-import Footer from "@/components/layout/Footer";
-import Header from "@/components/layout/Header";
-import MobileConversionBar from "@/components/layout/MobileConversionBar";
+import SiteShell from "@/components/layout/SiteShell";
 import ProcedureStickyNav from "@/components/procedures/ProcedureStickyNav";
-import AdditionalProceduresGrid from "@/components/sections/procedures/AdditionalProceduresGrid";
 import FeaturedProceduresHero from "@/components/sections/procedures/FeaturedProceduresHero";
 import Lipo360Section from "@/components/sections/procedures/Lipo360Section";
+import ProcedureDetailSection from "@/components/sections/procedures/ProcedureDetailSection";
 import ProceduresPageCta from "@/components/sections/procedures/ProceduresPageCta";
 import TummyTuckSection from "@/components/sections/procedures/TummyTuckSection";
-import { proceduresStickyNav } from "@/data/featuredProcedures";
+import {
+  breastSurgeryDetail,
+  faceProceduresDetail,
+  gynecomastiaDetail,
+  mommyMakeoverDetail,
+  proceduresStickyNav,
+} from "@/data/featuredProcedures";
 
 export const metadata = {
   title: "Featured Procedures | Rahman Plastic Surgery",
@@ -18,19 +21,24 @@ export const metadata = {
 
 export default function FeaturedProceduresPage() {
   return (
-    <div className="min-h-screen bg-brand-paper">
-      <Header />
-      <main id="main-content">
-        <FeaturedProceduresHero />
-        <ProcedureStickyNav items={proceduresStickyNav} />
-        <TummyTuckSection />
-        <Lipo360Section />
-        <AdditionalProceduresGrid />
-        <ProceduresPageCta />
-      </main>
-      <Footer />
-      <BackToTop />
-      <MobileConversionBar />
-    </div>
+    <SiteShell>
+      <FeaturedProceduresHero />
+      <ProcedureStickyNav items={proceduresStickyNav} />
+      <TummyTuckSection />
+      <Lipo360Section />
+      <ProcedureDetailSection detail={mommyMakeoverDetail} imagePosition="right" />
+      <ProcedureDetailSection
+        detail={breastSurgeryDetail}
+        imagePosition="left"
+        className="scroll-mt-40 bg-brand-white px-5 py-20 sm:px-8 lg:px-12 lg:py-28"
+      />
+      <ProcedureDetailSection detail={gynecomastiaDetail} imagePosition="right" />
+      <ProcedureDetailSection
+        detail={faceProceduresDetail}
+        imagePosition="left"
+        className="scroll-mt-40 bg-brand-white px-5 py-20 sm:px-8 lg:px-12 lg:py-28"
+      />
+      <ProceduresPageCta />
+    </SiteShell>
   );
 }

@@ -1,3 +1,4 @@
+import { getMedicalClinicJsonLd } from "@/lib/structured-data";
 import { DM_Sans, Instrument_Sans } from "next/font/google";
 import "./globals.css";
 
@@ -27,12 +28,20 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const jsonLd = getMedicalClinicJsonLd();
+
   return (
     <html
       lang="en"
       className={`${dmSans.variable} ${instrumentSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

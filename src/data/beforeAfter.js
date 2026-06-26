@@ -100,6 +100,6 @@ export const beforeAfterContent = {
     "Explore selected transformation results across our most requested procedures. Each case is unique, and outcomes vary based on anatomy, goals, and recovery.",
   cta: {
     label: "Case Studies",
-    href: "/#consultation",
+    href: "/case-studies",
   },
 };

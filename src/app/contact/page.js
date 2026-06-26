@@ -1,7 +1,4 @@
-import BackToTop from "@/components/layout/BackToTop";
-import Footer from "@/components/layout/Footer";
-import Header from "@/components/layout/Header";
-import MobileConversionBar from "@/components/layout/MobileConversionBar";
+import SiteShell from "@/components/layout/SiteShell";
 import ConsultationFormSection from "@/components/sections/ConsultationFormSection";
 import ClinicLocationPanel, { ClinicMapEmbed } from "@/components/ui/ClinicLocationPanel";
 import { ContactPhoneList } from "@/components/ui/ContactPhoneList";
@@ -17,9 +14,7 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-brand-paper">
-      <Header />
-      <main id="main-content">
+    <SiteShell>
         <section className="border-b border-brand-line bg-brand-white px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
           <div className="mx-auto grid max-w-[1280px] gap-10 lg:grid-cols-[minmax(0,0.55fr)_minmax(0,0.45fr)] lg:items-end lg:gap-16">
             <div className="max-w-2xl">
@@ -76,10 +71,6 @@ export default function ContactPage() {
         </section>
 
         <ConsultationFormSection />
-      </main>
-      <Footer />
-      <BackToTop />
-      <MobileConversionBar />
-    </div>
+    </SiteShell>
   );
 }

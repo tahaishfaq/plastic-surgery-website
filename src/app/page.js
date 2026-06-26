@@ -14,12 +14,16 @@ import StatisticsSection from "@/components/sections/StatisticsSection";
 import StrongCtaSection from "@/components/sections/StrongCtaSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import WhyChooseSection from "@/components/sections/WhyChooseSection";
-import Button from "@/components/ui/Button";
+import DoctorsTeaserSection, { NewsTeaserSection } from "@/components/sections/HomepageTeasers";
+import { getAllPosts } from "@/lib/content/news";
 import HighlightedWord from "@/components/ui/HighlightedWord";
+import Button from "@/components/ui/Button";
 import { getWhatsAppUrl, siteConfig } from "@/data/site";
 import Image from "next/image";
 
-export default function Home() {
+export default async function Home() {
+  const newsPosts = await getAllPosts();
+
   return (
     <div className="min-h-screen bg-[#F8F2EB]">
       <Header />
@@ -62,10 +66,9 @@ export default function Home() {
         <PatientJourneyGallerySection />
         <StatisticsSection />
         <LocationMapSection />
+        <DoctorsTeaserSection />
+        <NewsTeaserSection posts={newsPosts} />
         <ConsultationFormSection />
-
-        <section id="doctors" className="scroll-mt-24 sr-only" aria-label="Doctors" />
-        <section id="news" className="scroll-mt-24 sr-only" aria-label="News" />
       </main>
       <Footer />
       <BackToTop />
