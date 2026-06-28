@@ -5,6 +5,8 @@ export const caseStudyImages = {
   lipo360After: "/images/case studies/lipo-360-after.png",
   mommyMakeoverBefore: "/images/case studies/mommy-makeover-before.png",
   mommyMakeoverAfter: "/images/case studies/mommy-makeover-after.png",
+  brachioplastyBefore: "/images/case studies/Brachioplasty%20Before.png",
+  brachioplastyAfter: "/images/case studies/Brachioplasty%20After.png",
 };
 
 export const beforeAfterCategories = [
@@ -12,6 +14,7 @@ export const beforeAfterCategories = [
   { id: "liposuction", label: "Liposuction" },
   { id: "lipo-360", label: "Lipo 360" },
   { id: "mommy-makeover", label: "Mommy Makeover" },
+  { id: "brachioplasty", label: "Brachioplasty" },
 ];
 
 export const beforeAfterGallery = [
@@ -87,6 +90,25 @@ export const beforeAfterGallery = [
     after: {
       src: caseStudyImages.mommyMakeoverAfter,
       alt: "After mommy makeover result",
+      width: 800,
+      height: 1000,
+    },
+  },
+  {
+    id: "brach-01",
+    category: "brachioplasty",
+    title: "Brachioplasty arm contouring",
+    description:
+      "Upper arm contouring to address excess skin and improve arm shape after weight change or aging. Outcomes vary based on skin quality, healing, and surgical plan.",
+    before: {
+      src: caseStudyImages.brachioplastyBefore,
+      alt: "Before brachioplasty arm contouring",
+      width: 800,
+      height: 1000,
+    },
+    after: {
+      src: caseStudyImages.brachioplastyAfter,
+      alt: "After brachioplasty arm contouring result",
       width: 800,
       height: 1000,
     },

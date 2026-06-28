@@ -21,9 +21,9 @@ export const contactPhones = [
 ];
 
 export const clinicCoordinates = {
-  lat: 33.697471618652344,
-  lng: 73.04971313476562,
-  zoom: 17,
+  lat: 33.6974206,
+  lng: 73.0497688,
+  zoom: 19,
 };
 
 export const clinicBranches = [
@@ -68,12 +68,39 @@ export const siteConfig = {
     address: "G-8 Markaz",
     city: "Islamabad, Pakistan",
   },
-  googleMapsUrl: `https://www.google.com/maps?q=${clinicCoordinates.lat},${clinicCoordinates.lng}&z=${clinicCoordinates.zoom}&hl=en`,
-  googleMapsEmbedUrl: `https://maps.google.com/maps?q=${clinicCoordinates.lat},${clinicCoordinates.lng}&z=${clinicCoordinates.zoom}&hl=en&output=embed`,
+  googleMapsUrl:
+    "https://www.google.com/maps/place/Rahman+Plastic+Surgery/@33.6974206,73.0497688,19z/data=!3m1!4b1!4m6!3m5!1s0x38dfbf0069753beb:0x8c310c74423cc8de!8m2!3d33.6974206!4d73.0497688!16s%2Fg%2F11n4vmsx17",
+  googleMapsEmbedUrl:
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d415.8!2d73.0497688!3d33.6974206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbf0069753beb%3A0x8c310c74423cc8de!2sRahman%20Plastic%20Surgery!5e0!3m2!1sen!2spk!5m2!1sen!2spk",
   googleReviewUrl: "",
-  instagramUrl: "",
-  facebookUrl: "",
+  youtubeUrl: "https://youtube.com/@abhdtv1?si=0GoJfbNc7S2holm2",
+  tiktokUrl: "https://www.tiktok.com/@abhdtv?_r=1&_t=ZS-97XI376Q5u0",
+  facebookUrl: "https://www.facebook.com/share/14gDMLXWPAe/?mibextid=wwXIfr",
+  instagramUrl: "https://www.instagram.com/rahman_plasticsurgery?igsh=MTE2eTRrejFycHJ6dg==",
 };
+
+export const socialLinks = [
+  {
+    id: "youtube",
+    label: "YouTube",
+    href: siteConfig.youtubeUrl,
+  },
+  {
+    id: "tiktok",
+    label: "TikTok",
+    href: siteConfig.tiktokUrl,
+  },
+  {
+    id: "facebook",
+    label: "Facebook",
+    href: siteConfig.facebookUrl,
+  },
+  {
+    id: "instagram",
+    label: "Instagram",
+    href: siteConfig.instagramUrl,
+  },
+];
 
 export function getGoogleMapsUrl() {
   return siteConfig.googleMapsUrl;

@@ -4,7 +4,31 @@ import { useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Play, X } from "lucide-react";
 import StarRating from "@/components/ui/StarRating";
-import { resolveTestimonialImage } from "@/data/testimonials";
+import { getYouTubeThumbnail, resolveTestimonialImage } from "@/data/testimonials";
+
+function TestimonialThumbnail({ slide }) {
+  const [thumbnailSrc, setThumbnailSrc] = useState(() =>
+    slide.videoId ? getYouTubeThumbnail(slide.videoId, "maxres") : resolveTestimonialImage(slide.thumbnail),
+  );
+  const isYouTubeThumbnail = thumbnailSrc.includes("ytimg.com") || thumbnailSrc.includes("youtube.com");
+
+  return (
+    <Image
+      src={thumbnailSrc}
+      alt={slide.thumbnailAlt}
+      fill
+      sizes="(max-width: 768px) 100vw, 720px"
+      quality={95}
+      unoptimized={isYouTubeThumbnail}
+      className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+      onError={() => {
+        if (slide.videoId && thumbnailSrc.includes("maxresdefault")) {
+          setThumbnailSrc(getYouTubeThumbnail(slide.videoId, "hq"));
+        }
+      }}
+    />
+  );
+}
 
 function TestimonialSlide({ slide, onPlay }) {
   const { review } = slide;
@@ -13,13 +37,7 @@ function TestimonialSlide({ slide, onPlay }) {
     <article className="group relative w-full">
       <div className="overflow-hidden rounded-[2px] border border-brand-line bg-brand-white shadow-[0_14px_44px_-34px_rgba(43,35,30,0.28)] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-brand-primary hover:shadow-[0_20px_50px_-34px_rgba(168,141,112,0.32)] motion-reduce:transition-none motion-reduce:hover:translate-y-0">
         <div className="relative aspect-video overflow-hidden bg-brand-paper">
-          <Image
-            src={resolveTestimonialImage(slide.thumbnail)}
-            alt={slide.thumbnailAlt}
-            fill
-            sizes="(max-width: 768px) 100vw, 720px"
-            className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
-          />
+          <TestimonialThumbnail slide={slide} />
 
           <button
             type="button"

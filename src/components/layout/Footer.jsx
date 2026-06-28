@@ -2,6 +2,7 @@ import Image from "next/image";
 import { footerContent } from "@/data/footer";
 import { navigationItems } from "@/data/navigation";
 import { ContactPhoneList } from "@/components/ui/ContactPhoneList";
+import SocialLinks from "@/components/ui/SocialLinks";
 import { getGoogleMapsUrl, getMailtoUrl, siteConfig } from "@/data/site";
 
 export default function Footer() {
@@ -27,6 +28,10 @@ export default function Footer() {
               />
             </a>
             <p className="mt-6 max-w-sm text-base leading-7 text-white/72">{siteConfig.tagline}</p>
+            <div className="mt-8">
+              <p className="text-sm font-semibold text-white">Follow Us</p>
+              <SocialLinks className="mt-4" />
+            </div>
           </div>
 
           <div className="grid gap-10 sm:grid-cols-2 lg:col-span-7 lg:grid-cols-2 lg:gap-12">
@@ -72,9 +77,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <p className="mt-10 max-w-3xl text-sm leading-6 text-white/50">{footerContent.disclaimer}</p>
-
-        <div className="mt-10 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {currentYear} {siteConfig.name}. All rights reserved.
           </p>

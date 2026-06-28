@@ -14,16 +14,12 @@ import StatisticsSection from "@/components/sections/StatisticsSection";
 import StrongCtaSection from "@/components/sections/StrongCtaSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import WhyChooseSection from "@/components/sections/WhyChooseSection";
-import DoctorsTeaserSection, { NewsTeaserSection } from "@/components/sections/HomepageTeasers";
-import { getAllPosts } from "@/lib/content/news";
 import HighlightedWord from "@/components/ui/HighlightedWord";
 import Button from "@/components/ui/Button";
 import { getWhatsAppUrl, siteConfig } from "@/data/site";
 import Image from "next/image";
 
-export default async function Home() {
-  const newsPosts = await getAllPosts();
-
+export default function Home() {
   return (
     <div className="min-h-screen bg-[#F8F2EB]">
       <Header />
@@ -66,8 +62,6 @@ export default async function Home() {
         <PatientJourneyGallerySection />
         <StatisticsSection />
         <LocationMapSection />
-        <DoctorsTeaserSection />
-        <NewsTeaserSection posts={newsPosts} />
         <ConsultationFormSection />
       </main>
       <Footer />

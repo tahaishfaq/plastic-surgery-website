@@ -6,11 +6,13 @@ import ProcedureDetailSection from "@/components/sections/procedures/ProcedureDe
 import ProceduresPageCta from "@/components/sections/procedures/ProceduresPageCta";
 import TummyTuckSection from "@/components/sections/procedures/TummyTuckSection";
 import {
-  breastSurgeryDetail,
+  breastImplantationDetail,
+  breastReductionDetail,
   faceProceduresDetail,
   gynecomastiaDetail,
   mommyMakeoverDetail,
   proceduresStickyNav,
+  rhinoplastyDetail,
 } from "@/data/featuredProcedures";
 
 export const metadata = {
@@ -28,16 +30,18 @@ export default function FeaturedProceduresPage() {
       <Lipo360Section />
       <ProcedureDetailSection detail={mommyMakeoverDetail} imagePosition="right" />
       <ProcedureDetailSection
-        detail={breastSurgeryDetail}
+        detail={breastReductionDetail}
+        imagePosition="left"
+        className="scroll-mt-40 bg-brand-white px-5 py-20 sm:px-8 lg:px-12 lg:py-28"
+      />
+      <ProcedureDetailSection detail={breastImplantationDetail} imagePosition="right" />
+      <ProcedureDetailSection
+        detail={rhinoplastyDetail}
         imagePosition="left"
         className="scroll-mt-40 bg-brand-white px-5 py-20 sm:px-8 lg:px-12 lg:py-28"
       />
       <ProcedureDetailSection detail={gynecomastiaDetail} imagePosition="right" />
-      <ProcedureDetailSection
-        detail={faceProceduresDetail}
-        imagePosition="left"
-        className="scroll-mt-40 bg-brand-white px-5 py-20 sm:px-8 lg:px-12 lg:py-28"
-      />
+      <ProcedureDetailSection detail={faceProceduresDetail} imagePosition="right" />
       <ProceduresPageCta />
     </SiteShell>
   );

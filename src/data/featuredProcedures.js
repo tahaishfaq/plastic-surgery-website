@@ -3,6 +3,10 @@ export const procedureImages = {
   liposuction: "/images/procedures/liposuction.jpg",
   mommyMakeover: "/images/procedures/mommy-makeover.png",
   breastProcedure: "/images/procedures/breast-procedure.png",
+  breastImplantation: "/images/procedures/Breast%20implantation.png",
+  breastReduction: "/images/procedures/breast-procedure.png",
+  rhinoplasty: "/images/procedures/Rhinoplasty.png",
+  gynecomastia: "/images/procedures/Gaynomesia.png",
   pending: "/images/placeholders/og-placeholder.svg",
 };
 
@@ -49,14 +53,44 @@ export const homepageProcedureCards = [
     href: "/featured-procedures#mommy-makeover",
   },
   {
-    id: "breast-procedures",
-    category: "Aesthetic Surgery",
-    title: "Breast Procedures",
+    id: "breast-reduction",
+    category: "Breast Surgery",
+    title: "Breast Reduction",
     description:
-      "Surgical options designed to improve breast shape, proportion, balance, and aesthetic harmony.",
-    image: procedureImages.breastProcedure,
-    alt: "Luxury plastic surgery consultation for breast procedures",
-    href: "/featured-procedures#breast-procedures",
+      "Reduce breast volume and improve comfort and proportion with a surgeon-led reduction plan tailored to your anatomy.",
+    image: procedureImages.breastReduction,
+    alt: "Breast reduction consultation",
+    href: "/featured-procedures#breast-reduction",
+  },
+  {
+    id: "breast-implantation",
+    category: "Breast Surgery",
+    title: "Breast Implantation",
+    description:
+      "Enhance breast shape and volume with personalized implant planning focused on natural-looking proportion and balance.",
+    image: procedureImages.breastImplantation,
+    alt: "Breast implantation consultation",
+    href: "/featured-procedures#breast-implantation",
+  },
+  {
+    id: "rhinoplasty",
+    category: "Facial Surgery",
+    title: "Rhinoplasty",
+    description:
+      "Refine nasal shape and facial balance with a personalized rhinoplasty plan focused on natural-looking results.",
+    image: procedureImages.rhinoplasty,
+    alt: "Rhinoplasty consultation",
+    href: "/featured-procedures#rhinoplasty",
+  },
+  {
+    id: "gynecomastia",
+    category: "Male Chest Contouring",
+    title: "Gynecomastia",
+    description:
+      "Male chest contouring to reduce excess chest tissue and improve chest definition with surgeon-led assessment.",
+    image: procedureImages.gynecomastia,
+    alt: "Gynecomastia consultation",
+    href: "/featured-procedures#gynecomastia",
   },
 ];
 
@@ -77,7 +111,9 @@ export const proceduresStickyNav = [
   { label: "Tummy Tuck", href: "#tummy-tuck" },
   { label: "Lipo 360", href: "#lipo-360" },
   { label: "Mommy Makeover", href: "#mommy-makeover" },
-  { label: "Breast Surgery", href: "#breast-procedures" },
+  { label: "Breast Reduction", href: "#breast-reduction" },
+  { label: "Breast Implantation", href: "#breast-implantation" },
+  { label: "Rhinoplasty", href: "#rhinoplasty" },
   { label: "Gynecomastia", href: "#gynecomastia" },
   { label: "Face Procedures", href: "#face-procedures" },
 ];
@@ -243,29 +279,29 @@ export const mommyMakeoverDetail = {
   ],
 };
 
-export const breastSurgeryDetail = {
-  id: "breast-procedures",
-  eyebrow: "Aesthetic Surgery",
-  title: "Breast Surgery",
+export const breastReductionDetail = {
+  id: "breast-reduction",
+  eyebrow: "Breast Surgery",
+  title: "Breast Reduction",
   subtitle:
-    "Surgical options focused on improving breast shape, proportion, balance, and aesthetic harmony.",
-  image: procedureImages.breastProcedure,
-  alt: "Luxury breast surgery consultation",
+    "Surgical reduction to decrease breast volume, improve proportion, and address discomfort linked to excess breast tissue.",
+  image: procedureImages.breastReduction,
+  alt: "Breast reduction consultation",
   blocks: [
     {
-      heading: "Procedure Options",
-      body: "Breast surgery may include augmentation, reduction, lift, or revision depending on patient goals. Each approach is discussed during private consultation with the surgeon.",
+      heading: "What is Breast Reduction?",
+      body: "Breast reduction, also known as reduction mammaplasty, removes excess breast tissue and skin to create a breast size more proportionate to the body. The procedure may also address physical discomfort associated with larger breast volume.",
     },
     {
-      heading: "Consultation Focus",
-      body: "The surgeon reviews anatomy, symmetry, skin quality, and lifestyle factors to recommend an approach aligned with realistic expectations and recovery capacity.",
+      heading: "Who may benefit?",
+      body: "Patients with disproportionate breast size, shoulder or back discomfort, or difficulty with clothing fit may explore reduction after a full health and anatomy review with the surgeon.",
     },
   ],
   benefits: [
-    "Improves breast proportion and balance",
-    "Addresses shape concerns after pregnancy or weight change",
-    "Supports clothing fit and body confidence goals",
-    "Personalized implant or lift recommendations when appropriate",
+    "Reduces breast volume and weight",
+    "Improves breast proportion to body frame",
+    "May relieve discomfort linked to excess tissue",
+    "Supports improved clothing fit and posture goals",
     "Surgeon-led incision and scar planning",
     "Recovery guidance based on procedure type",
   ],
@@ -276,7 +312,7 @@ export const breastSurgeryDetail = {
     },
     {
       period: "Weeks 2-3",
-      detail: "Light daily activity may resume. Compression or support garments are typically worn as advised.",
+      detail: "Light daily activity may resume. Support garments are typically worn as advised.",
     },
     {
       period: "Weeks 4-6",
@@ -289,14 +325,14 @@ export const breastSurgeryDetail = {
   ],
   faqs: [
     {
-      question: "How do I choose the right procedure?",
-      answer:
-        "The surgeon evaluates your goals, anatomy, and health history to recommend augmentation, lift, reduction, or a combination approach.",
-    },
-    {
-      question: "Will scars be visible?",
+      question: "Will reduction scars be visible?",
       answer:
         "Surgical scars are expected. Incision placement and scar care are discussed during consultation with realistic expectations.",
+    },
+    {
+      question: "Can reduction be combined with a lift?",
+      answer:
+        "In some cases, reduction may be combined with lifting techniques depending on breast tissue, skin quality, and surgeon assessment.",
     },
     {
       question: "How long before final results?",
@@ -306,12 +342,138 @@ export const breastSurgeryDetail = {
   ],
 };
 
+export const breastImplantationDetail = {
+  id: "breast-implantation",
+  eyebrow: "Breast Surgery",
+  title: "Breast Implantation",
+  subtitle:
+    "Augmentation planning focused on breast shape, volume, and natural-looking proportion with surgeon-led implant selection.",
+  image: procedureImages.breastImplantation,
+  alt: "Breast implantation consultation",
+  blocks: [
+    {
+      heading: "What is Breast Implantation?",
+      body: "Breast implantation, or augmentation, uses implants to enhance breast volume and improve shape. Implant type, size, and placement are selected based on anatomy, goals, and surgeon recommendation.",
+    },
+    {
+      heading: "Consultation Focus",
+      body: "The surgeon reviews chest wall anatomy, tissue coverage, symmetry, and lifestyle factors before recommending an implant approach aligned with realistic outcomes and recovery capacity.",
+    },
+  ],
+  benefits: [
+    "Enhances breast volume and contour",
+    "Improves breast symmetry and proportion",
+    "Supports body confidence and clothing fit goals",
+    "Personalized implant recommendations",
+    "Surgeon-led incision and placement planning",
+    "Recovery guidance from the surgical team",
+  ],
+  recoveryTimeline: [
+    {
+      period: "Week 1",
+      detail: "Rest, swelling management, and limited upper-body activity as directed.",
+    },
+    {
+      period: "Weeks 2-3",
+      detail: "Light daily activity may resume. Support garments are typically worn as advised.",
+    },
+    {
+      period: "Weeks 4-6",
+      detail: "Gradual return to more activity based on healing and surgeon clearance.",
+    },
+    {
+      period: "After 6 Weeks",
+      detail: "Implants continue to settle as swelling reduces. Final shape may refine over several months.",
+    },
+  ],
+  faqs: [
+    {
+      question: "How are implant size and type chosen?",
+      answer:
+        "The surgeon evaluates your anatomy, goals, and health history to recommend implant options during private consultation.",
+    },
+    {
+      question: "How long is recovery?",
+      answer:
+        "Most patients need several weeks for swelling and activity levels to improve. The surgeon provides personalized recovery guidance.",
+    },
+    {
+      question: "Will results look natural?",
+      answer:
+        "Treatment planning prioritizes proportion and natural-looking outcomes based on your frame and tissue characteristics.",
+    },
+  ],
+};
+
+export const rhinoplastyDetail = {
+  id: "rhinoplasty",
+  eyebrow: "Facial Surgery",
+  title: "Rhinoplasty",
+  subtitle:
+    "A surgeon-led nasal refinement procedure focused on facial balance, breathing considerations, and natural-looking results.",
+  image: procedureImages.rhinoplasty,
+  alt: "Rhinoplasty consultation",
+  blocks: [
+    {
+      heading: "What is Rhinoplasty?",
+      body: "Rhinoplasty is a surgical procedure designed to refine nasal shape and proportion. Goals may include addressing dorsal profile, tip definition, asymmetry, or functional concerns identified during consultation.",
+    },
+    {
+      heading: "Who may benefit?",
+      body: "Patients seeking improved nasal balance or correction of structural concerns may explore rhinoplasty after a full assessment of facial anatomy, skin thickness, and recovery expectations.",
+    },
+  ],
+  benefits: [
+    "Refines nasal shape and facial proportion",
+    "Addresses aesthetic concerns with surgeon-led planning",
+    "Functional concerns reviewed during consultation",
+    "Personalized approach based on facial anatomy",
+    "Recovery guidance from the surgical team",
+    "Focus on natural-looking refinement",
+  ],
+  recoveryTimeline: [
+    {
+      period: "Days 1-7",
+      detail: "Rest, swelling management, and nasal care instructions from the surgical team.",
+    },
+    {
+      period: "Weeks 2-3",
+      detail: "Bruising and swelling gradually improve. Social activity may resume based on surgeon guidance.",
+    },
+    {
+      period: "Weeks 4-8",
+      detail: "Nasal contour becomes more visible as swelling continues to reduce.",
+    },
+    {
+      period: "After 3 Months",
+      detail: "Results continue to refine. Final shape may take additional time depending on healing.",
+    },
+  ],
+  faqs: [
+    {
+      question: "How long is rhinoplasty recovery?",
+      answer:
+        "Most swelling improves over several weeks, but final refinement can take months. The surgeon provides a personalized recovery timeline during consultation.",
+    },
+    {
+      question: "Will results look natural?",
+      answer:
+        "Treatment planning prioritizes balanced, natural-looking outcomes based on your facial structure and goals.",
+    },
+    {
+      question: "Can breathing concerns be addressed?",
+      answer:
+        "Functional concerns are reviewed during consultation. The surgeon determines whether aesthetic and functional goals can be addressed in the same plan.",
+    },
+  ],
+};
+
 export const gynecomastiaDetail = {
   id: "gynecomastia",
   title: "Gynecomastia",
   subtitle:
     "Male chest contouring designed to reduce excess chest tissue and improve chest appearance.",
-  image: procedureImages.pending,
+  image: procedureImages.gynecomastia,
   alt: "Premium gynecomastia consultation",
   blocks: [
     {
@@ -366,8 +528,6 @@ export const gynecomastiaDetail = {
         "Upper-body exercise is typically restricted for several weeks. The surgeon provides clearance based on your recovery progress.",
     },
   ],
-  resultsNote:
-    "Illustrative imagery pending client-approved photography. Individual results vary based on tissue type, healing, and surgical plan.",
 };
 
 export const faceProceduresDetail = {

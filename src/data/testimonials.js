@@ -12,8 +12,10 @@ export function getYouTubeEmbedUrl(videoId) {
   return `https://www.youtube.com/embed/${videoId}`;
 }
 
-export function getYouTubeThumbnail(videoId) {
-  return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+export function getYouTubeThumbnail(videoId, quality = "maxres") {
+  const file =
+    quality === "maxres" ? "maxresdefault.jpg" : quality === "hq" ? "hqdefault.jpg" : "sddefault.jpg";
+  return `https://i.ytimg.com/vi/${videoId}/${file}`;
 }
 
 export const testimonialsContent = {

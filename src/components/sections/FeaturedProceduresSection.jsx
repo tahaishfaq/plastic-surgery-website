@@ -1,5 +1,5 @@
 import Button from "@/components/ui/Button";
-import FeaturedProcedureShowcaseCard from "@/components/ui/FeaturedProcedureShowcaseCard";
+import ProceduresSlider from "@/components/ui/ProceduresSlider";
 import {
   homepageProcedureCards,
   homepageProceduresContent,
@@ -49,11 +49,7 @@ export default function FeaturedProceduresSection() {
         </div>
       </div>
 
-      <div className="mt-14 grid w-full grid-cols-1 gap-px sm:grid-cols-2 xl:grid-cols-4">
-        {homepageProcedureCards.map((card) => (
-          <FeaturedProcedureShowcaseCard key={card.id} card={card} />
-        ))}
-      </div>
+      <ProceduresSlider cards={homepageProcedureCards} />
     </section>
   );
 }

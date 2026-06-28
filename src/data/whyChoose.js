@@ -14,11 +14,11 @@ export const whyChooseContent = {
   },
   reasons: [
     "Board Certified Plastic Surgeon",
-    "10+ Years Experience",
+    "20+ Years Experienced",
     "Advanced Surgical Techniques",
     "Personalized Treatment Plans",
     "Safe & Modern Facility",
     "International Patient Support",
-    "More than 3 plastic surgeons are working with Rahman",
+    "Pakistan's Biggest Plastic Surgeons Team Ever",
   ],
 };
