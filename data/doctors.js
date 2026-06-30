@@ -65,7 +65,7 @@ export const doctors = [
     credentials: "",
     bio: "Supports safe anesthesia planning and perioperative care for surgical patients at Rahman Plastic Surgery.",
     image: {
-      src: doctorImage("1559839734-2b71ea197ec2"),
+      src: doctorImage("1507003211169-0a1dd7228f2d"),
       alt: "Dr. Rasheed Ullah Khan Khattak, Assistant Professor Anesthesia at Rahman Plastic Surgery.",
     },
   },
@@ -76,7 +76,7 @@ export const doctors = [
     credentials: "",
     bio: "Provides specialist consultation support within the Rahman Plastic Surgery clinical team.",
     image: {
-      src: doctorImage("1573496359142-b8d87734a5a2"),
+      src: doctorImage("1560250097-0b93528c311a"),
       alt: "Dr. Shah Zahid, Consultant at Rahman Plastic Surgery.",
     },
   },

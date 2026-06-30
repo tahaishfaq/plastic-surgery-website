@@ -72,18 +72,20 @@ export default function BeforeAfterGallerySection() {
           </div>
 
           {activeItem ? (
-            <article className="overflow-hidden rounded-[2px] bg-brand-white text-brand-ink shadow-[0_24px_60px_-40px_rgba(0,0,0,0.55)] lg:max-w-[580px] lg:justify-self-end xl:max-w-[620px]">
-              <BeforeAfterSlider
-                key={activeItem.id}
-                before={activeItem.before}
-                after={activeItem.after}
-                label={activeItem.title}
-              />
-              <div className="border-t border-brand-line px-6 py-7 sm:px-8 sm:py-8">
-                <h3 className="font-instrument text-2xl font-semibold leading-tight tracking-[-0.03em] text-brand-ink sm:text-[1.65rem]">
+            <article className="overflow-hidden rounded-[2px] bg-brand-white text-brand-ink shadow-[0_24px_60px_-40px_rgba(0,0,0,0.55)] lg:max-w-[500px] lg:justify-self-end xl:max-w-[520px]">
+              <div className="bg-brand-paper p-2 sm:p-3">
+                <BeforeAfterSlider
+                  key={activeItem.id}
+                  before={activeItem.before}
+                  after={activeItem.after}
+                  label={activeItem.title}
+                />
+              </div>
+              <div className="border-t border-brand-line px-5 py-5 sm:px-6 sm:py-6">
+                <h3 className="font-instrument text-lg font-semibold leading-snug tracking-[-0.03em] text-brand-ink sm:text-xl">
                   {activeItem.title}
                 </h3>
-                <p className="mt-3 text-sm leading-7 text-brand-body sm:text-base">{activeItem.description}</p>
+                <p className="mt-2 text-xs leading-6 text-brand-body sm:text-sm">{activeItem.description}</p>
                 {activeItem.provisional ? (
                   <p className="mt-4 text-xs text-brand-muted">
                     Illustrative frames only. Approved patient photography will replace these assets.

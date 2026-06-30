@@ -8,6 +8,7 @@ export default function BeforeAfterSlider({ before, after, label }) {
   const [position, setPosition] = useState(50);
   const containerRef = useRef(null);
   const [containerWidth, setContainerWidth] = useState(0);
+  const isRasterCaseStudy = /\.(png|jpe?g|webp)(\?|$)/i.test(after.src);
 
   const updateWidth = useCallback(() => {
     if (containerRef.current) {
@@ -23,14 +24,17 @@ export default function BeforeAfterSlider({ before, after, label }) {
   }, [updateWidth]);
 
   return (
-    <div ref={containerRef} className="relative aspect-[5/6] w-full overflow-hidden bg-brand-paper sm:aspect-[7/8]">
+    <div
+      ref={containerRef}
+      className="relative aspect-[4/5] w-full overflow-hidden bg-brand-paper"
+    >
       <Image
         src={after.src}
         alt={after.alt}
         fill
-        sizes="(max-width: 768px) 100vw, 640px"
+        sizes="(max-width: 640px) 100vw, 500px"
+        unoptimized={isRasterCaseStudy}
         className="object-cover"
-        priority
       />
 
       <div
@@ -43,9 +47,9 @@ export default function BeforeAfterSlider({ before, after, label }) {
             src={before.src}
             alt={before.alt}
             fill
-            sizes="(max-width: 768px) 100vw, 640px"
+            sizes="(max-width: 640px) 100vw, 500px"
+            unoptimized={isRasterCaseStudy}
             className="object-cover"
-            priority
           />
         </div>
       </div>

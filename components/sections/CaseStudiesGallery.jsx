@@ -60,12 +60,14 @@ export default function CaseStudiesGallery() {
             key={item.id}
             className="overflow-hidden border border-brand-line bg-brand-white shadow-[0_16px_48px_-36px_rgba(43,35,30,0.2)]"
           >
-            <BeforeAfterSlider before={item.before} after={item.after} label={item.title} />
-            <div className="border-t border-brand-line px-6 py-7 sm:px-8">
-              <h2 className="font-instrument text-2xl font-semibold tracking-[-0.03em] text-brand-ink">
+            <div className="bg-brand-paper p-2 sm:p-3">
+              <BeforeAfterSlider before={item.before} after={item.after} label={item.title} />
+            </div>
+            <div className="border-t border-brand-line px-5 py-5 sm:px-6 sm:py-6">
+              <h2 className="font-instrument text-lg font-semibold leading-snug tracking-[-0.03em] text-brand-ink sm:text-xl">
                 {item.title}
               </h2>
-              <p className="mt-3 text-sm leading-7 text-brand-body">{item.description}</p>
+              <p className="mt-2 text-xs leading-6 text-brand-body sm:text-sm">{item.description}</p>
               {item.provisional ? (
                 <p className="mt-4 text-xs text-brand-muted">
                   Illustrative frames only. Approved patient photography will replace these assets.
