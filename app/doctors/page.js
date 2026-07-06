@@ -7,7 +7,7 @@ import { doctors, doctorsPageContent } from "@/data/doctors";
 export const metadata = {
   title: "Our Clinical Team | Rahman Plastic Surgery",
   description:
-    "Meet the surgeons and specialists at Rahman Plastic Surgery, led by Dr. Zahid Latif, Medical Director.",
+    "Meet the surgeons and specialists at Rahman Plastic Surgery, led by Dr. Zahid, Medical Director.",
 };
 
 export default function DoctorsPage() {

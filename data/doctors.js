@@ -1,6 +1,5 @@
 export const doctorImages = {
   zahidLatif: "/images/doctors/Dr%20Zahid%20Latif.png",
-  zahidKhan: "/images/doctors/Dr%20Zahid%20Khan.png",
   nadiyaTariq: "/images/doctors/Dr%20Nadia.png",
   tariqShah: "/images/doctors/Dr.%20Tariq%20Shah.png",
   rasheedUllahKhanKhattak: "/images/doctors/Dr.%20Rasheed%20Ullah%20Khan%20Khattak.png",
@@ -19,24 +18,13 @@ export const doctorsPageContent = {
 export const doctors = [
   {
     id: "zahid-latif",
-    name: "Dr. Zahid Latif",
+    name: "Dr. Zahid",
     role: "Medical Director",
     credentials: "Rahman Plastic Surgery",
     bio: "Provides medical leadership across surgical planning, clinical standards, and patient care at Rahman Plastic Surgery.",
     image: {
       src: doctorImages.zahidLatif,
-      alt: "Dr. Zahid Latif, Medical Director at Rahman Plastic Surgery.",
-    },
-  },
-  {
-    id: "zahid-khan",
-    name: "Dr. Zahid Khan",
-    role: "Plastic Surgeon",
-    credentials: "",
-    bio: "Supports body contouring and reconstructive consultations with a focus on clear planning and natural-looking outcomes.",
-    image: {
-      src: doctorImages.zahidKhan,
-      alt: "Dr. Zahid Khan, Plastic Surgeon at Rahman Plastic Surgery.",
+      alt: "Dr. Zahid, Medical Director at Rahman Plastic Surgery.",
     },
   },
   {
