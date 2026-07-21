@@ -30,7 +30,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default async function NewsArticlePage({ params }) {
+export default async function BlogArticlePage({ params }) {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
 
@@ -46,11 +46,16 @@ export default async function NewsArticlePage({ params }) {
             className="text-sm font-bold uppercase tracking-[0.14em] text-brand-primary transition-colors hover:text-brand-primary-hover"
             href="/news"
           >
-            Back to News
+            Back to Blogs
           </Link>
 
-          <p className="mt-8 text-sm text-brand-muted">{formatDate(post.publishedAt)}</p>
-          <p className="mt-2 text-xs font-bold uppercase tracking-[0.12em] text-brand-primary">{post.category}</p>
+          <div className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-brand-muted">
+            <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
+            <span aria-hidden="true">·</span>
+            <span>{post.readingMinutes} min read</span>
+            <span aria-hidden="true">·</span>
+            <span className="font-bold uppercase tracking-[0.12em] text-brand-primary">{post.category}</span>
+          </div>
 
           <h1 className="mt-5 font-instrument text-4xl font-semibold tracking-[-0.04em] text-brand-ink sm:text-5xl">
             {post.title}

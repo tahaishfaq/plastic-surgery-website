@@ -20,7 +20,7 @@ export default function DoctorsTeaserSection() {
   );
 }
 
-export function NewsTeaserSection({ posts = [] }) {
+export function BlogsTeaserSection({ posts = [] }) {
   const latestPost = posts[0];
 
   return (
@@ -29,7 +29,7 @@ export function NewsTeaserSection({ posts = [] }) {
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
             <h2 className="font-instrument text-3xl font-semibold tracking-[-0.03em] text-brand-ink sm:text-4xl">
-              News & insights
+              Blogs
             </h2>
             <p className="mt-4 text-base leading-7 text-brand-body">
               Patient guidance, recovery notes, and clinic updates.
@@ -47,7 +47,7 @@ export function NewsTeaserSection({ posts = [] }) {
             ) : null}
           </div>
           <Button href="/news" variant="outline">
-            View All News
+            View All Blogs
           </Button>
         </div>
       </div>

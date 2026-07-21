@@ -5,6 +5,7 @@ import MobileConversionBar from "@/components/layout/MobileConversionBar";
 import BeforeAfterGallerySection from "@/components/sections/BeforeAfterGallerySection";
 import ConsultationFormSection from "@/components/sections/ConsultationFormSection";
 import FeaturedProceduresSection from "@/components/sections/FeaturedProceduresSection";
+import FeaturedBlogsSection from "@/components/sections/FeaturedBlogsSection";
 import FiveStepJourneySection from "@/components/sections/FiveStepJourneySection";
 import InternationalServicesSection from "@/components/sections/InternationalServicesSection";
 import LocationMapSection from "@/components/sections/LocationMapSection";
@@ -17,9 +18,12 @@ import WhyChooseSection from "@/components/sections/WhyChooseSection";
 import HighlightedWord from "@/components/ui/HighlightedWord";
 import Button from "@/components/ui/Button";
 import { getWhatsAppUrl, siteConfig } from "@/data/site";
+import { getAllPosts } from "@/lib/content/news";
 import Image from "next/image";
 
-export default function Home() {
+export default async function Home() {
+  const posts = await getAllPosts();
+
   return (
     <div className="min-h-screen bg-[#F8F2EB]">
       <Header />
@@ -62,6 +66,7 @@ export default function Home() {
         <PatientJourneyGallerySection />
         <StatisticsSection />
         <LocationMapSection />
+        <FeaturedBlogsSection posts={posts} />
         <ConsultationFormSection />
       </main>
       <Footer />

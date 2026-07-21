@@ -19,6 +19,9 @@ export const metadata = {
   description:
     "Explore personalized tummy tuck, liposuction, Lipo 360, and body contouring care with Rahman Plastic Surgery in Pakistan. International patient consultations available.",
   ...(siteUrl ? { metadataBase: new URL(siteUrl) } : {}),
+  verification: {
+    google: "dvMsSpx8vdWCAaM9m3xyA9ZsnHk659wqHsNa-VyEbFo",
+  },
   openGraph: {
     title: "Rahman Plastic Surgery | Tummy Tuck & Liposuction in Pakistan",
     description:

@@ -13,7 +13,7 @@ export const navigationItems = [
     hasSubmenu: true,
     submenu: servicesSubmenu,
   },
-  { label: "News", href: "/news" },
+  { label: "Blogs", href: "/news" },
   { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ];

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Rahman SEO Strategist"
+  short_description: "Medical SEO strategy and content planning"
+  default_prompt: "Use $rahman-seo-strategist to research, plan, and draft an SEO-safe content brief for Rahman Plastic Surgery."
