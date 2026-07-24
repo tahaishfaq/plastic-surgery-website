@@ -4,8 +4,6 @@ import BlogGridCard from "@/components/ui/BlogGridCard";
 export default function FeaturedBlogsSection({ posts = [] }) {
   if (!posts.length) return null;
 
-  const featuredPosts = posts.slice(0, 4);
-
   return (
     <section aria-labelledby="featured-blogs-heading" className="border-y border-brand-line bg-brand-white py-20 lg:py-24">
       <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">
@@ -32,7 +30,7 @@ export default function FeaturedBlogsSection({ posts = [] }) {
         </div>
 
         <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:mt-12 lg:gap-6 xl:grid-cols-4">
-          {featuredPosts.map((post) => (
+          {posts.map((post) => (
             <BlogGridCard key={post.slug} post={post} />
           ))}
         </div>

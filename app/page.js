@@ -18,11 +18,11 @@ import WhyChooseSection from "@/components/sections/WhyChooseSection";
 import HighlightedWord from "@/components/ui/HighlightedWord";
 import Button from "@/components/ui/Button";
 import { getWhatsAppUrl, siteConfig } from "@/data/site";
-import { getAllPosts } from "@/lib/content/news";
+import { getFeaturedHomepagePosts } from "@/lib/content/news";
 import Image from "next/image";
 
 export default async function Home() {
-  const posts = await getAllPosts();
+  const featuredPosts = await getFeaturedHomepagePosts();
 
   return (
     <div className="min-h-screen bg-[#F8F2EB]">
@@ -66,7 +66,7 @@ export default async function Home() {
         <PatientJourneyGallerySection />
         <StatisticsSection />
         <LocationMapSection />
-        <FeaturedBlogsSection posts={posts} />
+        <FeaturedBlogsSection posts={featuredPosts} />
         <ConsultationFormSection />
       </main>
       <Footer />
