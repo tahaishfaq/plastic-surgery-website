@@ -59,14 +59,14 @@ export const clinicBranches = [
     id: "multan",
     city: "Multan",
     label: "Multan Branch",
-    place: "Mughal General Hospital",
+    place: "Multan General Hospital",
     status: "open",
     address: "Nishtar Road, Al-Raheem Colony",
     region: "Multan, Pakistan",
-    mapsQuery: "Mughal General Hospital, Nishtar Road, Al-Raheem Colony, Multan",
-    image: "/images/branches/mughal-general-hsp.png",
+    mapsQuery: "Multan General Hospital, Nishtar Road, Al-Raheem Colony, Multan",
+    image: "/images/branches/multan-general-hsp.png",
     imagePosition: "object-center",
-    imageAlt: "Exterior of Mughal General Hospital on Nishtar Road, Al-Raheem Colony, Multan.",
+    imageAlt: "Exterior of Multan General Hospital on Nishtar Road, Al-Raheem Colony, Multan.",
   },
 ];
 
@@ -79,7 +79,7 @@ export const siteConfig = {
   email: "info@rahmanplasticsurgery.com",
   address: "Defence Medical Complex, Sector F, DHA Phase 7",
   city: "Islamabad, Pakistan",
-  workingHours: "Mon-Sat, 10:00 AM-7:00 PM",
+  workingHours: "Mon-Sat, 11:00 AM-7:00 PM",
   hoursNote: "Consultations by appointment",
   mapOverlay: {
     label: "Main Branch",
