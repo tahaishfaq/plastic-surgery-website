@@ -9,7 +9,7 @@ export function ClinicMapEmbed({ className = "" }) {
   return (
     <div className={`relative ${className}`}>
       <iframe
-        title="Rahman Plastic Surgery main branch map"
+        title="Map of Defence Medical Complex, the Rahman Plastic Surgery main branch in Islamabad"
         src={siteConfig.googleMapsEmbedUrl}
         className="h-[min(72vh,820px)] min-h-[520px] w-full border-0 sm:min-h-[600px] lg:min-h-[720px]"
         loading="lazy"

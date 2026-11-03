@@ -2,7 +2,7 @@ export const careersPageContent = {
   hero: {
     title: "Careers",
     description:
-      "Join the Rahman Plastic Surgery team in Islamabad. We will post open roles here as the clinic network grows.",
+      "Join the Rahman Plastic Surgery team across Islamabad, Lahore, and Multan. We will post open roles here as the clinic network grows.",
   },
   intro: {
     heading: "Work With a Surgeon-Led Team",

@@ -20,30 +20,53 @@ export const contactPhones = [
   },
 ];
 
-export const clinicCoordinates = {
-  lat: 33.6974206,
-  lng: 73.0497688,
-  zoom: 19,
-};
+export function getMapsSearchUrl(query) {
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+}
+
+export function getMapsEmbedUrl(query) {
+  return `https://www.google.com/maps?q=${encodeURIComponent(query)}&z=16&output=embed`;
+}
 
 export const clinicBranches = [
   {
     id: "islamabad",
     city: "Islamabad",
     label: "Main Branch",
+    place: "Defence Medical Complex",
     status: "open",
-    address: "G-8 Markaz",
+    address: "Sector F, DHA Phase 7",
     region: "Islamabad, Pakistan",
+    mapsQuery: "Defence Medical Complex, Sector F DHA Phase 7, Islamabad",
+    image: "/images/branches/defence-medical-complex.png",
+    imagePosition: "object-top",
+    imageAlt: "Exterior of Defence Medical Complex in Sector F, DHA Phase 7, Islamabad.",
   },
   {
     id: "lahore",
     city: "Lahore",
-    status: "coming-soon",
+    label: "Lahore Branch",
+    place: "MSK Dialysis & Medical Complex",
+    status: "open",
+    address: "Johar Town",
+    region: "Lahore, Pakistan",
+    mapsQuery: "MSK Dialysis and Medical Complex, Johar Town, Lahore",
+    image: "/images/branches/MSK-hsp.png",
+    imagePosition: "object-center",
+    imageAlt: "Exterior of MSK Dialysis and Medical Complex in Johar Town, Lahore.",
   },
   {
-    id: "karachi",
-    city: "Karachi",
-    status: "coming-soon",
+    id: "multan",
+    city: "Multan",
+    label: "Multan Branch",
+    place: "Mughal General Hospital",
+    status: "open",
+    address: "Nishtar Road, Al-Raheem Colony",
+    region: "Multan, Pakistan",
+    mapsQuery: "Mughal General Hospital, Nishtar Road, Al-Raheem Colony, Multan",
+    image: "/images/branches/mughal-general-hsp.png",
+    imagePosition: "object-center",
+    imageAlt: "Exterior of Mughal General Hospital on Nishtar Road, Al-Raheem Colony, Multan.",
   },
 ];
 
@@ -54,19 +77,17 @@ export const siteConfig = {
   phones: contactPhones,
   whatsappNumber: contactPhones[0].e164,
   email: "info@rahmanplasticsurgery.com",
-  address: "G-8 Markaz",
+  address: "Defence Medical Complex, Sector F, DHA Phase 7",
   city: "Islamabad, Pakistan",
   workingHours: "Mon-Sat, 10:00 AM-7:00 PM",
   hoursNote: "Consultations by appointment",
   mapOverlay: {
     label: "Main Branch",
-    address: "G-8 Markaz",
+    address: "Defence Medical Complex, Sector F, DHA Phase 7",
     city: "Islamabad, Pakistan",
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/place/Rahman+Plastic+Surgery/@33.6974206,73.0497688,19z/data=!3m1!4b1!4m6!3m5!1s0x38dfbf0069753beb:0x8c310c74423cc8de!8m2!3d33.6974206!4d73.0497688!16s%2Fg%2F11n4vmsx17",
-  googleMapsEmbedUrl:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d415.8!2d73.0497688!3d33.6974206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbf0069753beb%3A0x8c310c74423cc8de!2sRahman%20Plastic%20Surgery!5e0!3m2!1sen!2spk!5m2!1sen!2spk",
+  googleMapsUrl: getMapsSearchUrl("Defence Medical Complex, Sector F DHA Phase 7, Islamabad"),
+  googleMapsEmbedUrl: getMapsEmbedUrl("Defence Medical Complex, Sector F DHA Phase 7, Islamabad"),
   googleReviewUrl: "",
   youtubeUrl: "https://youtube.com/@abhdtv1?si=0GoJfbNc7S2holm2",
   tiktokUrl: "https://www.tiktok.com/@abhdtv?_r=1&_t=ZS-97XI376Q5u0",

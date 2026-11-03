@@ -5,7 +5,7 @@ import { Clock3, MapPin, Menu, MessageCircle, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { navigationItems } from "@/data/navigation";
-import { contactPhones, getGoogleMapsUrl, getTelUrl, getWhatsAppUrl, siteConfig } from "@/data/site";
+import { contactPhones, getGoogleMapsUrl, getMainBranch, getTelUrl, getWhatsAppUrl, siteConfig } from "@/data/site";
 import Button from "@/components/ui/Button";
 import MobileMenu from "./MobileMenu";
 import NavServicesDropdown from "./NavServicesDropdown";
@@ -15,6 +15,7 @@ const CONTACT_ICON_STROKE = 1.5;
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const mainBranch = getMainBranch();
 
   return (
     <>
@@ -61,9 +62,9 @@ export default function Header() {
                 />
                 <span className="grid gap-0.5 text-sm leading-5">
                   <strong className="font-bold text-brand-ink group-hover:text-brand-primary-hover">
-                    {siteConfig.address}
+                    {mainBranch.place}
                   </strong>
-                  <span className="text-brand-body">{siteConfig.city}</span>
+                  <span className="text-brand-body">{mainBranch.city}</span>
                 </span>
               </a>
               <div className="ml-8 flex items-center gap-3 border-l border-brand-line pl-8 whitespace-nowrap">

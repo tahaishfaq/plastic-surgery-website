@@ -6,7 +6,7 @@ import { careersPageContent } from "@/data/careers";
 export const metadata = {
   title: "Careers | Rahman Plastic Surgery",
   description:
-    "View career opportunities at Rahman Plastic Surgery in Islamabad and share your interest for future clinic roles.",
+    "View career opportunities at Rahman Plastic Surgery and share your interest for future clinic roles.",
 };
 
 export default function CareersPage() {

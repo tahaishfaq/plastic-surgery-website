@@ -3,7 +3,7 @@ import { footerContent } from "@/data/footer";
 import { navigationItems } from "@/data/navigation";
 import { ContactPhoneList } from "@/components/ui/ContactPhoneList";
 import SocialLinks from "@/components/ui/SocialLinks";
-import { getGoogleMapsUrl, getMailtoUrl, siteConfig } from "@/data/site";
+import { clinicBranches, getMailtoUrl, getMapsSearchUrl, siteConfig } from "@/data/site";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -63,15 +63,21 @@ export default function Footer() {
                     {siteConfig.email}
                   </a>
                 </li>
-                <li className="leading-6">
-                  <a className="transition-colors duration-200 hover:text-white" href={getGoogleMapsUrl()} target="_blank" rel="noopener noreferrer">
-                    {siteConfig.address}
-                    <br />
-                    {siteConfig.city}
-                  </a>
-                  <br />
-                  {siteConfig.workingHours}
-                </li>
+                {clinicBranches.map((branch) => (
+                  <li key={branch.id} className="leading-6">
+                    <a
+                      className="transition-colors duration-200 hover:text-white"
+                      href={getMapsSearchUrl(branch.mapsQuery)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span className="text-white">{branch.city}</span>
+                      <br />
+                      {branch.place}, {branch.address}
+                    </a>
+                  </li>
+                ))}
+                <li>{siteConfig.workingHours}</li>
               </ul>
             </div>
           </div>

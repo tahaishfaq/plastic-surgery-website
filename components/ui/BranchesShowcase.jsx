@@ -4,24 +4,34 @@ import Button from "@/components/ui/Button";
 import { branchShowcaseItems } from "@/data/branches";
 import { getGoogleMapsUrl, siteConfig } from "@/data/site";
 
-function BranchShowcaseCard({ branch }) {
+function BranchShowcaseCard({ branch, selected = false, onSelect }) {
   const isOpen = branch.status === "open";
+  const isSelectable = Boolean(onSelect);
 
   const cardBody = (
     <>
       <div
         className={[
-          "relative aspect-square overflow-hidden bg-brand-paper",
-          isOpen ? "ring-1 ring-brand-primary/35 ring-offset-2 ring-offset-brand-paper" : "",
+          "relative aspect-[3/2] overflow-hidden bg-brand-ink",
+          (isSelectable ? selected : isOpen) ? "ring-1 ring-brand-primary/35 ring-offset-2 ring-offset-brand-paper" : "",
         ].join(" ")}
       >
-        <Image
-          src={branch.image}
-          alt={branch.imageAlt}
-          fill
-          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 240px"
-          className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
-        />
+        {branch.image ? (
+          <Image
+            src={branch.image}
+            alt={branch.imageAlt}
+            fill
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 240px"
+            className={[
+              "object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100",
+              branch.imagePosition || "object-center",
+            ].join(" ")}
+          />
+        ) : (
+          <div className="flex h-full items-center p-5 sm:p-6">
+            <p className="font-instrument text-3xl font-semibold tracking-[-0.04em] text-white">{branch.city}</p>
+          </div>
+        )}
       </div>
 
       <div className="mt-4 border-t border-brand-line pt-4">
@@ -53,6 +63,21 @@ function BranchShowcaseCard({ branch }) {
     </>
   );
 
+  if (isSelectable) {
+    return (
+      <article className="group">
+        <button
+          type="button"
+          className="block w-full text-left"
+          aria-pressed={selected}
+          onClick={() => onSelect(branch.id)}
+        >
+          {cardBody}
+        </button>
+      </article>
+    );
+  }
+
   if (isOpen && branch.href) {
     return (
       <article className="group">
@@ -66,23 +91,34 @@ function BranchShowcaseCard({ branch }) {
   return <article className="group">{cardBody}</article>;
 }
 
-export default function BranchesShowcase({ className = "" }) {
+export default function BranchesShowcase({ className = "", selectedId, onSelect }) {
+  const selectedBranch = branchShowcaseItems.find((branch) => branch.id === selectedId);
+  const directionsHref = selectedBranch?.href || getGoogleMapsUrl();
+  const directionsLabel = selectedBranch
+    ? `Get directions to ${selectedBranch.place}`
+    : `Get directions to ${siteConfig.address}`;
+
   return (
     <div className={className}>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-5">
         {branchShowcaseItems.map((branch) => (
-          <BranchShowcaseCard key={branch.id} branch={branch} />
+          <BranchShowcaseCard
+            key={branch.id}
+            branch={branch}
+            selected={selectedId === branch.id}
+            onSelect={onSelect}
+          />
         ))}
       </div>
 
       <Button
-        href={getGoogleMapsUrl()}
+        href={directionsHref}
         target="_blank"
         rel="noopener noreferrer"
         variant="outline"
         className="mt-8"
       >
-        Get directions to {siteConfig.address}
+        {directionsLabel}
       </Button>
     </div>
   );

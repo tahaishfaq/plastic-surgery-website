@@ -1,11 +1,10 @@
-import BranchesShowcase from "@/components/ui/BranchesShowcase";
+import HomepageBranchMap from "@/components/sections/HomepageBranchMap";
 import { branchesShowcaseContent } from "@/data/branches";
-import { ClinicMapEmbed } from "@/components/ui/ClinicLocationPanel";
 
 export default function LocationMapSection() {
   return (
     <section className="bg-brand-paper">
-      <div className="mx-auto max-w-[1280px] px-5 py-12 sm:px-8 lg:px-12 lg:py-16">
+      <div className="mx-auto max-w-[1280px] px-5 pt-12 sm:px-8 lg:px-12 lg:pt-16">
         <div className="max-w-2xl">
           <p className="text-xs font-bold uppercase tracking-[0.22em] text-brand-primary">
             {branchesShowcaseContent.eyebrow}
@@ -15,13 +14,9 @@ export default function LocationMapSection() {
           </h2>
           <p className="mt-4 text-base leading-7 text-brand-body">{branchesShowcaseContent.description}</p>
         </div>
-
-        <BranchesShowcase className="mt-10" />
       </div>
 
-      <div className="mt-10 border-t border-brand-line">
-        <ClinicMapEmbed />
-      </div>
+      <HomepageBranchMap />
     </section>
   );
 }

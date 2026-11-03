@@ -10,7 +10,7 @@ import { getMailtoUrl, getWhatsAppUrl, siteConfig } from "@/data/site";
 export const metadata = {
   title: "Contact Us | Rahman Plastic Surgery",
   description:
-    "Contact Rahman Plastic Surgery at G-8 Markaz Islamabad. View branch locations, clinic hours, and send a consultation request.",
+    "Contact Rahman Plastic Surgery at Defence Medical Complex in Islamabad, MSK Dialysis and Medical Complex in Lahore, and Mughal General Hospital in Multan.",
 };
 
 export default function ContactPage() {

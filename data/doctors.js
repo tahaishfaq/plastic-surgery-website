@@ -11,7 +11,7 @@ export const doctorsPageContent = {
   hero: {
     title: "Our Clinical Team",
     description:
-      "Meet the surgeons and specialists behind Rahman Plastic Surgery in Islamabad.",
+      "Meet the surgeons and specialists behind Rahman Plastic Surgery in Islamabad, Lahore, and Multan.",
   },
 };
 
